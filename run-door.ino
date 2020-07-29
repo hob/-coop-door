@@ -1,5 +1,10 @@
-#define pc 0 // the cell and 10k pull-down resistor are connected to analog 0
+// the photocell and 10k pull-down resistor that make up the light sensor
+#define pc 0
+// optional - If you connect enA or enB on the motor controller,
+//            you can use maxPwmOutput to control the speed of the motor
 #define enB 4
+// in1/in2 or in3/in4 on the motor controller.  These control the direction
+// of the motor's spin
 #define in3 13
 #define in4 14
 int photocellReading;
