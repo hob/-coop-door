@@ -17,11 +17,11 @@ void setup() {
   Serial.begin(9600); //Enable debug output in console
   pinMode(LED_BUILTIN, OUTPUT); //Get ready to use the built-in led to indicate light/dark status
   pinMode(enB, OUTPUT);
-  pinMode(in13, OUTPUT);
-  pinMode(in14, OUTPUT);
+  pinMode(in3, OUTPUT);
+  pinMode(in4, OUTPUT);
   //Set motor's initial rotation direction
-  digitalWrite(in13, LOW);
-  digitalWrite(in14, HIGH);
+  digitalWrite(in3, LOW);
+  digitalWrite(in4, HIGH);
 }
 void loop() {
   photocellReading = analogRead(pc);
@@ -31,14 +31,14 @@ void loop() {
   if(photocellReading > lightThreshold) {
     Serial.println("lighting up led");
     digitalWrite(LED_BUILTIN, HIGH);
-    digitalWrite(in13, HIGH);
-    digitalWrite(in14, LOW);
+    digitalWrite(in3, HIGH);
+    digitalWrite(in4, LOW);
     rotationDirection = 1;
   }else{
     Serial.println("shutting off led");
     digitalWrite(LED_BUILTIN, LOW);    
-    digitalWrite(in13, LOW);
-    digitalWrite(in14, HIGH);
+    digitalWrite(in3, LOW);
+    digitalWrite(in4, HIGH);
     rotationDirection = -1;
   }
   Serial.print("Current position = ");
